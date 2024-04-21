@@ -22,6 +22,18 @@ public class EmployeeAPIService {
         return employees;
     }
 
+    @PostMapping
+    public String createEmployee(@RequestBody Employee employee) {
+        if (employees == null){
+            employees = new ArrayList<Employee>();
+        }
+        if (employees.contains(employee)){
+            return "invalid employee entry";
+        }
+        employees.add(employee);
+        return "new employee record created";
+    }
+
     @GetMapping("/{id}")
     public Employee getEmployeeDetails(@PathVariable("id") String id) {
         if (CollectionUtils.isEmpty(employees) || StringUtils.isEmpty(id)) {
@@ -33,18 +45,6 @@ public class EmployeeAPIService {
             }
         }
         return null;
-    }
-
-    @PostMapping
-    public String createEmployee(@RequestBody Employee employee) {
-        if (employees == null){
-            employees = new ArrayList<Employee>();
-        }
-        if (isInvalidEmployee(employee)){
-            return "invalid employee entry";
-        }
-        employees.add(employee);
-        return "new employee record created";
     }
 
     @PutMapping
@@ -60,7 +60,20 @@ public class EmployeeAPIService {
         return "employee record edit";
     }
 
-    private boolean isInvalidEmployee(Employee employee){
-        return ((employees == null) || employees.contains(employee));
+    @DeleteMapping("{id}")
+    public String deleteEmployee(@PathVariable("id") String id){
+        if (StringUtils.isEmpty(id)){
+            return "invalid employee id";
+        }
+        Employee employee =  getEmployeeDetails(id);
+        if (employee == null){
+            return "invalid employee id";
+        }
+        employees.remove(employee);
+        return "employee id deleted";
+    }
+
+    private boolean InvalidEmployee(Employee employee){
+        return ((employees == null) || !employees.contains(employee));
     }
 }
