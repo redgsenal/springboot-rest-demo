@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spingdemo_crud?useSSL=false
+    username: crud_user
+    password: password123aaa
+
+#KJPA Setting
+  jpa.hibernate.ddl_auto: update

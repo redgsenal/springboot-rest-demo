@@ -1,8 +1,18 @@
 package com.myrestdemo.restdemo.model;
 
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import java.lang.annotation.Repeatable;
 import java.util.Comparator;
 
+@Entity
+@Table(name="employees")
 public class Employee implements Comparable<Employee> {
+    @Id
     private String id;
     private String firstName;
     private String lastName;
