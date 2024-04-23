@@ -1,11 +1,13 @@
 package com.myrestdemo.restdemo.service.impl;
 
+import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.repository.EmployeeRepository;
 import com.myrestdemo.restdemo.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeImpl implements EmployeeService {
@@ -40,7 +42,11 @@ public class EmployeeImpl implements EmployeeService {
     @Override
     public Employee getEmployee(String id) {
         /* TODO put business logic here */
-        return employeeRepository.findById(id).orElse(null);
+        Optional<Employee> result = employeeRepository.findById(id);
+        if (result.isEmpty()){
+            throw new EmployeeNotFoundException("Employee data not found.");
+        }
+        return result.orElse(null);
     }
 
     @Override
