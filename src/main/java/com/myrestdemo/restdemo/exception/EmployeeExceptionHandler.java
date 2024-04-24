@@ -14,7 +14,15 @@ public class EmployeeExceptionHandler {
                 employeeNotFoundException.getMessage(),
                 employeeNotFoundException.getCause(),
                 HttpStatus.NOT_FOUND);
-
         return new ResponseEntity<>(employeeException, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(value = {EmployeeIDExistsException.class})
+    public ResponseEntity<Object> handleEmployeeIDExistsException(EmployeeIDExistsException employeeIDExistsException) {
+        EmployeeException employeeException = new EmployeeException(
+                employeeIDExistsException.getMessage(),
+                employeeIDExistsException.getCause(),
+                HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(employeeException, HttpStatus.BAD_REQUEST);
     }
 }
