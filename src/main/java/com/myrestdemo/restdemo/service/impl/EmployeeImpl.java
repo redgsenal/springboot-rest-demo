@@ -19,10 +19,10 @@ public class EmployeeImpl implements EmployeeService {
     }
 
     @Override
-    public String createEmployee(Employee employee) {
+    public Employee createEmployee(Employee employee) {
         /* TODO put business logic here */
         employeeRepository.save(employee);
-        return "New employee created.";
+        return employeeRepository.findById(employee.getId()).orElse(null);
     }
 
     @Override
@@ -43,9 +43,6 @@ public class EmployeeImpl implements EmployeeService {
     public Employee getEmployee(String id) {
         /* TODO put business logic here */
         Optional<Employee> result = employeeRepository.findById(id);
-        if (result.isEmpty()){
-            throw new EmployeeNotFoundException("Employee data not found.");
-        }
         return result.orElse(null);
     }
 
