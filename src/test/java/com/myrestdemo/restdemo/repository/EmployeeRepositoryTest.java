@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
 import java.util.List;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DataJpaTest
 public class EmployeeRepositoryTest {
@@ -35,15 +35,16 @@ public class EmployeeRepositoryTest {
     void testFindByEmployeeNameFound(){
         List<Employee> employees = employeeRepository.findByCountry("Singapore");
         assertThat(employees.isEmpty()).isFalse();
-        assertThat(employees.getFirst()).isNotNull();
-        assertThat(employees.getFirst().getCountry()).isEqualTo(employee.getCountry());
-        assertThat(employees.getFirst().getEmail()).isEqualTo(employee.getEmail());
+        Employee empl = employees.get(0);
+        assertThat(empl).isNotNull();
+        assertThat(empl.getCountry()).isEqualTo(employee.getCountry());
+        assertThat(empl.getEmail()).isEqualTo(employee.getEmail());
     }
 
     // Do FAIL Test Case
     @Test
     void testFindByEmployeeNameNotFound(){
-        List<Employee> employees = employeeRepository.findByCountry("Philippines");
+        List<Employee> employees = employeeRepository.findByCountry("Singapore");
         assertThat(employees.isEmpty()).isTrue();
     }
 }
