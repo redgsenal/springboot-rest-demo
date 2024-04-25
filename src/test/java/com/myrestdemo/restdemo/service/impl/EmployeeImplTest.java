@@ -23,8 +23,7 @@ class EmployeeImplTest {
     @Mock
     private EmployeeRepository employeeRepository;
 
-    @InjectMocks
-    private EmployeeService employeeService = employeeService = new EmployeeImpl(employeeRepository);
+    private EmployeeService employeeService;
 
     private AutoCloseable autoCloseable;
     private Employee employee;
@@ -32,6 +31,7 @@ class EmployeeImplTest {
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
+        employeeService = new EmployeeImpl(employeeRepository);
         employee = new Employee("6", "John", "Doe", "jd@demo.com", "Singapore");
         employeeRepository.save(employee);
     }

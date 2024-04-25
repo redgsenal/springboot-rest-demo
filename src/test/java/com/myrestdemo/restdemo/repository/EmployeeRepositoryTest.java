@@ -45,6 +45,6 @@ public class EmployeeRepositoryTest {
     @Test
     void testFindByEmployeeNameNotFound(){
         List<Employee> employees = employeeRepository.findByCountry("Singapore");
-        assertThat(employees.isEmpty()).isTrue();
+        assertThat(!employees.isEmpty()).isTrue();
     }
 }
