@@ -8,13 +8,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+// import static org.junit.jupiter.api.Assertions.*;
+
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @WebMvcTest(EmployeeAPIController.class)
 class EmployeeAPIControllerTest {
@@ -45,22 +55,32 @@ class EmployeeAPIControllerTest {
     }
 
     @Test
-    void testGetEmployeeList() {
+    void testGetEmployeeList() throws Exception {
+        when(employeeService.getAllEmployees()).thenReturn(employeeList);
+        this.mockMvc.perform(get("/employee/list")).andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void createEmployee() {
+    void testCreateEmployee() {
     }
 
     @Test
-    void getEmployeeDetails() {
+    void getEmployeeDetails() throws Exception {
+        when(employeeService.getEmployee("1")).thenReturn(employee1);
+        this.mockMvc.perform(get("/employee/1")).andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void updateEmployee() {
+    void testUpdateEmployee() {
     }
 
     @Test
-    void deleteEmployee() {
+    void testDeleteEmployee() throws Exception{
+        String expectResponse = "Employee record deleted.";
+        when(employeeService.getEmployee("1")).thenReturn(employee3);
+        when(employeeService.deleteEmployee("1")).thenReturn(expectResponse);
+        MvcResult result = this.mockMvc.perform(delete("/employee/1")).andDo(print()).andExpect(status().isOk()).andReturn();
+        String actual = result.getResponse().getContentAsString();
+        assertThat(actual).isEqualTo(expectResponse);
     }
 }
