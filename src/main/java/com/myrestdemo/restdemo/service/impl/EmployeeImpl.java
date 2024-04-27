@@ -4,6 +4,8 @@ import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.repository.EmployeeRepository;
 import com.myrestdemo.restdemo.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 
 @Service
 public class EmployeeImpl implements EmployeeService {
+
+    private static final Logger logInfo = LoggerFactory.getLogger(EmployeeImpl.class);
 
     @Autowired
     EmployeeRepository employeeRepository;
@@ -23,6 +27,7 @@ public class EmployeeImpl implements EmployeeService {
     @Override
     public Employee createEmployee(Employee employee) {
         /* TODO put business logic here */
+        logInfo.info("Employee {}", employee.getId());
         employeeRepository.save(employee);
         return employeeRepository.findById(employee.getId()).orElse(null);
     }
@@ -49,6 +54,8 @@ public class EmployeeImpl implements EmployeeService {
     @Override
     public Employee getEmployee(String id) {
         /* TODO put business logic here */
+        logInfo.info("retrieve employee by id: {}", id);
+        logInfo.debug("run debug here retrieve employee by id: {}", id);
         Optional<Employee> result = employeeRepository.findById(id);
         return result.orElse(null);
     }

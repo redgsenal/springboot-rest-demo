@@ -1,18 +1,14 @@
 package com.myrestdemo.restdemo.controller;
 
-import com.myrestdemo.restdemo.exception.EmployeeException;
 import com.myrestdemo.restdemo.exception.EmployeeIDExistsException;
 import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.response.ResponseHandler;
 import com.myrestdemo.restdemo.service.EmployeeService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
