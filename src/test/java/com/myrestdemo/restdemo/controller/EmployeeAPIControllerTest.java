@@ -1,18 +1,26 @@
 package com.myrestdemo.restdemo.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.service.EmployeeService;
+import org.apache.commons.lang3.StringUtils;
+import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompare;
+import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,8 +28,7 @@ import java.util.List;
 // import static org.junit.jupiter.api.Assertions.*;
 
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -61,7 +68,19 @@ class EmployeeAPIControllerTest {
     }
 
     @Test
-    void testCreateEmployee() {
+    void testCreateEmployee() throws Exception {
+        Employee expectEmployee = employee1;
+        String expectJSONString = buildResponseJSONString(employee1);
+        JSONObject expectJSONEmployee = new JSONObject(expectJSONString);
+        when(employeeService.createEmployee(expectEmployee)).thenReturn(expectEmployee);
+        MvcResult result = this.mockMvc.perform(post("/employee")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(expectJSONString))
+                .andDo(print()).andExpect(status().isOk()).andReturn();
+        String actualJSONResponse = result.getResponse().getContentAsString();
+        JSONObject actualJSONResponseObject = new JSONObject(actualJSONResponse);
+        JSONObject actualJSONEmployee = actualJSONResponseObject.getJSONObject("data");
+        JSONAssert.assertEquals(actualJSONEmployee, expectJSONEmployee, JSONCompareMode.STRICT);
     }
 
     @Test
@@ -75,12 +94,21 @@ class EmployeeAPIControllerTest {
     }
 
     @Test
-    void testDeleteEmployee() throws Exception{
+    void testDeleteEmployee() throws Exception {
         String expectResponse = "Employee record deleted.";
         when(employeeService.getEmployee("1")).thenReturn(employee3);
         when(employeeService.deleteEmployee("1")).thenReturn(expectResponse);
         MvcResult result = this.mockMvc.perform(delete("/employee/1")).andDo(print()).andExpect(status().isOk()).andReturn();
         String actual = result.getResponse().getContentAsString();
         assertThat(actual).isEqualTo(expectResponse);
+    }
+
+    private String buildResponseJSONString(Employee employee) throws JsonProcessingException {
+        ObjectMapper map = new ObjectMapper();
+        map.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter writer = map.writer().withDefaultPrettyPrinter();
+        return writer.writeValueAsString(employee)
+                .replaceAll(StringUtils.SPACE, "")
+                .replaceAll("\n", "");
     }
 }
