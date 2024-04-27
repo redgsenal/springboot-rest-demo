@@ -4,6 +4,7 @@ import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.repository.EmployeeRepository;
 import com.myrestdemo.restdemo.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.Optional;
 @Service
 public class EmployeeImpl implements EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     public EmployeeImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -23,6 +25,11 @@ public class EmployeeImpl implements EmployeeService {
         /* TODO put business logic here */
         employeeRepository.save(employee);
         return employeeRepository.findById(employee.getId()).orElse(null);
+    }
+
+    @Override
+    public String addEmployee(Employee employee) {
+        return createEmployee(employee) != null ? "Success" : "Fail";
     }
 
     @Override
@@ -50,5 +57,10 @@ public class EmployeeImpl implements EmployeeService {
     public List<Employee> getAllEmployees() {
         /* TODO put business logic here */
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public List<Employee> getEmployeeCountry(String country) {
+        return employeeRepository.findByCountry(country);
     }
 }
