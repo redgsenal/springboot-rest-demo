@@ -90,7 +90,18 @@ class EmployeeAPIControllerTest {
     }
 
     @Test
-    void testUpdateEmployee() {
+    void testUpdateEmployee() throws Exception {
+        Employee expectEmployee = employee1;
+        String expectJSONString = "{\"data\":null,\"httpStatus\":\"OK\",\"message\":\"Employee details created\"}";
+        JSONObject expectJSONObject = new JSONObject(expectJSONString);
+        when(employeeService.updateEmployee(expectEmployee)).thenReturn("Employee record updated.");
+        MvcResult result = this.mockMvc.perform(post("/employee")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(expectJSONString))
+                .andDo(print()).andExpect(status().isOk()).andReturn();
+        String actualJSONResponse = result.getResponse().getContentAsString();
+        JSONObject actualJSONResponseObject = new JSONObject(actualJSONResponse);
+        JSONAssert.assertEquals(actualJSONResponseObject, expectJSONObject, JSONCompareMode.STRICT);
     }
 
     @Test
