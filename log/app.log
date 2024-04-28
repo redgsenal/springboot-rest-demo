@@ -1,0 +1,30 @@
+2024-04-28 09:11:35.315000 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myrestdemo.restdemo.controller.EmployeeAPIControllerTest]: EmployeeAPIControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-28 09:11:35.463000 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myrestdemo.restdemo.RestDemoApplication for test class com.myrestdemo.restdemo.controller.EmployeeAPIControllerTest
+2024-04-28 09:11:36.090000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - Starting EmployeeAPIControllerTest using Java 22.0.1 with PID 31484 (started by reggi in X:\Projects\springboot-rest-demo)
+2024-04-28 09:11:36.099000 [main] DEBUG c.m.r.c.EmployeeAPIControllerTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-28 09:11:36.101000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-04-28 09:11:38.674000 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-04-28 09:11:38.676000 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-04-28 09:11:38.683000 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2024-04-28 09:11:38.728000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - Started EmployeeAPIControllerTest in 3.178 seconds (process running for 4.3)
+2024-04-28 09:11:39.135000 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myrestdemo.restdemo.repository.EmployeeRepositoryTest]: EmployeeRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-28 09:11:39.177000 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myrestdemo.restdemo.RestDemoApplication for test class com.myrestdemo.restdemo.repository.EmployeeRepositoryTest
+2024-04-28 09:11:39.230000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - Starting EmployeeRepositoryTest using Java 22.0.1 with PID 31484 (started by reggi in X:\Projects\springboot-rest-demo)
+2024-04-28 09:11:39.231000 [main] DEBUG c.m.r.r.EmployeeRepositoryTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-28 09:11:39.232000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-04-28 09:11:39.456000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-28 09:11:39.506000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2024-04-28 09:11:39.546000 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-04-28 09:11:39.592000 [main] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:aa9f198c-ecb0-4bc6-9cfd-6acb396a37f7;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-04-28 09:11:39.891000 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-28 09:11:40.024000 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-28 09:11:40.065000 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-28 09:11:40.165000 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-28 09:11:40.205000 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-28 09:11:40.738000 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-28 09:11:40.787000 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-28 09:11:41.245000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - Started EmployeeRepositoryTest in 2.062 seconds (process running for 6.818)
+2024-04-28 09:11:41.650000 [main] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 6
+2024-04-28 09:11:41.652000 [main] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 6
+2024-04-28 09:11:41.681000 [main] INFO  c.m.r.service.impl.EmployeeImpl - Employee 6
+2024-04-28 09:11:41.894000 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
