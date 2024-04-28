@@ -1,70 +1,30 @@
-00:12:45.976 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-00:12:45.999 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-00:12:46.024 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-00:12:49.844 [main] INFO  c.m.restdemo.RestDemoApplication - Starting RestDemoApplication using Java 21.0.2 with PID 27372 (X:\Projects\springboot-rest-demo\target\classes started by reggi in X:\Projects\springboot-rest-demo)
-00:12:49.852 [main] DEBUG c.m.restdemo.RestDemoApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
-00:12:49.854 [main] INFO  c.m.restdemo.RestDemoApplication - No active profile set, falling back to 1 default profile: "default"
-00:12:51.172 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-00:12:51.282 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
-00:12:52.392 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-00:12:52.412 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-00:12:52.417 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-00:12:52.418 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-00:12:52.531 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-00:12:52.534 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2569 ms
-00:12:53.105 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-00:12:53.307 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-00:12:53.378 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-00:12:53.798 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-00:12:53.840 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-00:12:54.576 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38a96593
-00:12:54.579 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-00:12:56.149 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-00:12:56.215 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-00:12:57.042 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-00:12:58.013 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-00:12:58.088 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-00:12:58.109 [main] INFO  c.m.restdemo.RestDemoApplication - Started RestDemoApplication in 8.884 seconds (process running for 9.811)
-00:13:10.012 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-00:13:10.015 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-00:13:10.038 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-00:13:13.270 [main] INFO  c.m.restdemo.RestDemoApplication - Starting RestDemoApplication using Java 21.0.2 with PID 1864 (X:\Projects\springboot-rest-demo\target\classes started by reggi in X:\Projects\springboot-rest-demo)
-00:13:13.279 [main] DEBUG c.m.restdemo.RestDemoApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
-00:13:13.282 [main] INFO  c.m.restdemo.RestDemoApplication - No active profile set, falling back to 1 default profile: "default"
-00:13:14.583 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-00:13:14.695 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 1 JPA repository interface.
-00:13:15.884 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-00:13:15.908 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-00:13:15.914 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-00:13:15.916 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-00:13:16.027 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-00:13:16.030 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2639 ms
-00:13:16.604 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-00:13:16.747 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-00:13:16.834 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-00:13:17.278 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-00:13:17.319 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-00:13:18.005 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7afb9c93
-00:13:18.010 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-00:13:19.673 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-00:13:19.740 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-00:13:20.966 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-00:13:21.847 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-00:13:21.938 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-00:13:21.961 [main] INFO  c.m.restdemo.RestDemoApplication - Started RestDemoApplication in 9.368 seconds (process running for 10.374)
-00:13:33.788 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-00:13:33.788 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-00:13:33.790 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-00:13:33.859 [http-nio-8080-exec-2] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 2
-00:13:33.860 [http-nio-8080-exec-2] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 2
-00:13:34.600 [http-nio-8080-exec-3] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 2
-00:13:34.601 [http-nio-8080-exec-3] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 2
-00:13:38.438 [http-nio-8080-exec-4] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 2
-00:13:38.439 [http-nio-8080-exec-4] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 2
-00:13:39.500 [http-nio-8080-exec-5] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 2
-00:13:39.501 [http-nio-8080-exec-5] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 2
-00:13:40.536 [http-nio-8080-exec-6] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 2
-00:13:40.536 [http-nio-8080-exec-6] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 2
-00:13:49.522 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-00:13:49.525 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-00:13:49.550 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-28 09:11:35.315000 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myrestdemo.restdemo.controller.EmployeeAPIControllerTest]: EmployeeAPIControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-28 09:11:35.463000 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myrestdemo.restdemo.RestDemoApplication for test class com.myrestdemo.restdemo.controller.EmployeeAPIControllerTest
+2024-04-28 09:11:36.090000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - Starting EmployeeAPIControllerTest using Java 22.0.1 with PID 31484 (started by reggi in X:\Projects\springboot-rest-demo)
+2024-04-28 09:11:36.099000 [main] DEBUG c.m.r.c.EmployeeAPIControllerTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-28 09:11:36.101000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-04-28 09:11:38.674000 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-04-28 09:11:38.676000 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-04-28 09:11:38.683000 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2024-04-28 09:11:38.728000 [main] INFO  c.m.r.c.EmployeeAPIControllerTest - Started EmployeeAPIControllerTest in 3.178 seconds (process running for 4.3)
+2024-04-28 09:11:39.135000 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myrestdemo.restdemo.repository.EmployeeRepositoryTest]: EmployeeRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-28 09:11:39.177000 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myrestdemo.restdemo.RestDemoApplication for test class com.myrestdemo.restdemo.repository.EmployeeRepositoryTest
+2024-04-28 09:11:39.230000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - Starting EmployeeRepositoryTest using Java 22.0.1 with PID 31484 (started by reggi in X:\Projects\springboot-rest-demo)
+2024-04-28 09:11:39.231000 [main] DEBUG c.m.r.r.EmployeeRepositoryTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-28 09:11:39.232000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-04-28 09:11:39.456000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-28 09:11:39.506000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2024-04-28 09:11:39.546000 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-04-28 09:11:39.592000 [main] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:aa9f198c-ecb0-4bc6-9cfd-6acb396a37f7;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-04-28 09:11:39.891000 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-28 09:11:40.024000 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-28 09:11:40.065000 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-04-28 09:11:40.165000 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-28 09:11:40.205000 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-28 09:11:40.738000 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-28 09:11:40.787000 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-28 09:11:41.245000 [main] INFO  c.m.r.r.EmployeeRepositoryTest - Started EmployeeRepositoryTest in 2.062 seconds (process running for 6.818)
+2024-04-28 09:11:41.650000 [main] INFO  c.m.r.service.impl.EmployeeImpl - retrieve employee by id: 6
+2024-04-28 09:11:41.652000 [main] DEBUG c.m.r.service.impl.EmployeeImpl - run debug here retrieve employee by id: 6
+2024-04-28 09:11:41.681000 [main] INFO  c.m.r.service.impl.EmployeeImpl - Employee 6
+2024-04-28 09:11:41.894000 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
