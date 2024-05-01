@@ -1,6 +1,5 @@
 package com.myrestdemo.restdemo.service.impl;
 
-import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 import com.myrestdemo.restdemo.repository.EmployeeRepository;
 import com.myrestdemo.restdemo.service.EmployeeService;

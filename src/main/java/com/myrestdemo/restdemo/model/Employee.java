@@ -1,13 +1,8 @@
 package com.myrestdemo.restdemo.model;
 
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import java.lang.annotation.Repeatable;
-import java.util.Comparator;
 
 @Entity
 @Table(name="employees")

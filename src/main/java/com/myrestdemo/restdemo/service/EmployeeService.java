@@ -1,7 +1,5 @@
 package com.myrestdemo.restdemo.service;
 
-import com.myrestdemo.restdemo.exception.EmployeeException;
-import com.myrestdemo.restdemo.exception.EmployeeNotFoundException;
 import com.myrestdemo.restdemo.model.Employee;
 
 import java.util.List;
